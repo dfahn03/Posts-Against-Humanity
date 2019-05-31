@@ -19,13 +19,13 @@ export default class QuestionController {
 
   async getAllQuestions(req, res, next) {
     try {
-      let questions = await _repo.find({})
+      let questions = await _repo.find({}).populate('userId')
       return res.send(questions)
     } catch (error) { next(error) }
   }
   async getQuestionById(req, res, next) {
     try {
-      let question = await _repo.findOne({ id: req.params.id })//populate comments
+      let question = await _repo.findOne({ id: req.params.id }).populate('userId')
       return res.send(question)
     } catch (error) { next(error) }
   }
