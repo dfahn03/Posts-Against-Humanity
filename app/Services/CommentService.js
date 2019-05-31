@@ -7,8 +7,8 @@ let ObjectId = mongoose.Schema.Types.ObjectId
 let _schema = new mongoose.Schema({
   body: { type: String, required: true },
   values: { type: Number, default: 0 },
-  questionId: { type: ObjectId, required: true },
-  userId: { type: ObjectId, required: true }
+  questionId: { type: ObjectId, ref: 'question', required: true },
+  userId: { type: ObjectId, ref: 'user', required: true }
 }, { timestamps: true })
 
 //PUBLIC

@@ -12,7 +12,7 @@ export default class CommentController {
   constructor() {
     this.router = express.Router()
       .get('', this.getAllComments)
-      .get('/:name', this.getCommentById)
+      .get('/:id', this.getCommentById)
       .put('/:id', this.editComment)
       .post('', this.createComment)
       .delete('/:id', this.deleteComment)
@@ -21,13 +21,13 @@ export default class CommentController {
 
   async getAllComments(req, res, next) {
     try {
-      let comments = await _repo.find({})
+      let comments = await _repo.find({}).populate('userId')
       return res.send(comments)
     } catch (error) { next(error) }
   }
   async getCommentById(req, res, next) {
     try {
-      let comment = await _repo.findOne({ name: req.params.name })
+      let comment = await _repo.findOne({ _id: req.params.id }).populate('userId')
       return res.send(comment)
     } catch (error) { next(error) }
   }

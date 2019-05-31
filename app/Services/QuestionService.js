@@ -9,7 +9,7 @@ let _schema = new mongoose.Schema({
   category: { type: String, enum: ['Conspiracy', 'Wrong-Answer', 'Mad-Libs'], required: true },
   body: { type: String, required: true },
   votes: { type: Number, default: 0 },
-  userId: { type: ObjectId, required: true }
+  userId: { type: ObjectId, ref: 'user', required: true }
 }, { timestamps: true })
 
 //PUBLIC
