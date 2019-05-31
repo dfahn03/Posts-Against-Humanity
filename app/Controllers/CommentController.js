@@ -1,60 +1,60 @@
 import express from 'express'
-import UserService from '../services/UserService'
+import CommentService from '../services/CommentService'
 
 //PRIVATE
-let _userService = new UserService()
-let _repo = _userService.repository
+let _commentService = new CommentService()
+let _repo = _commentService.repository
 
 
 
 //PUBLIC
-export default class UserController {
+export default class CommentController {
   constructor() {
     this.router = express.Router()
-      .get('', this.getAllUsers)
-      .get('/:name', this.getUserByName)
-      .put('/:id', this.editUser)
-      .post('', this.createUser)
-      .delete('/:id', this.deleteUser)
+      .get('', this.getAllComments)
+      .get('/:id', this.getCommentById)
+      .put('/:id', this.editComment)
+      .post('', this.createComment)
+      .delete('/:id', this.deleteComment)
       .use('*', this.defaultRoute)
   }
 
-  async getAllUsers(req, res, next) {
+  async getAllComments(req, res, next) {
     try {
-      let users = await _repo.find({})
-      return res.send(users)
+      let comments = await _repo.find({}).populate('userId')
+      return res.send(comments)
     } catch (error) { next(error) }
   }
-  async getUserByName(req, res, next) {
+  async getCommentById(req, res, next) {
     try {
-      let user = await _repo.findOne({ name: req.params.name })
-      return res.send(user)
+      let comment = await _repo.findOne({ _id: req.params.id }).populate('userId')
+      return res.send(comment)
     } catch (error) { next(error) }
   }
-  async editUser(req, res, next) {
+  async editComment(req, res, next) {
     try {
-      let user = await _repo.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
-      if (user) {
-        return res.send(user)
+      let comment = await _repo.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+      if (comment) {
+        return res.send(comment)
       }
-      throw new Error('Ninja Unseen')
+      throw new Error('Invalid Comment Id')
     } catch (error) { next(error) }
   }
-  async createUser(req, res, next) {
+  async createComment(req, res, next) {
     try {
-      let user = await _repo.create(req.body)
-      return res.status(201).send(user)
+      let comment = await _repo.create(req.body)
+      return res.status(201).send(comment)
     } catch (error) { next(error) }
   }
-  async deleteUser(req, res, next) {
+  async deleteComment(req, res, next) {
     try {
-      let users = await _repo.findOneAndDelete({ _id: req.params.id })
-      return res.send('Ninja Vanished')
+      let comments = await _repo.findOneAndDelete({ _id: req.params.id })
+      return res.send('You silenced me')
     } catch (error) { next(error) }
   }
 
   defaultRoute(req, res, next) {
-    next({ status: 400, message: 'No Such Ninja' })
+    next({ status: 400, message: 'Ninja\'s don\'t speak' })
   }
 
 }
