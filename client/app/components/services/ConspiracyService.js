@@ -31,9 +31,9 @@ export default class ConspiracyService {
   }
 
   getAllConspiracies() {
-    _conspiracyApi.get()
+    _conspiracyApi.get('/category/Conspiracies')
       .then(res => {
-        let data = res.data.data.map(d => new Conspiracy(d))
+        let data = res.data.map(d => new Conspiracy(d))
         _setState('conspiracies', data)
       })
       .catch(err => {

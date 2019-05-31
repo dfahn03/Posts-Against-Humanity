@@ -5,12 +5,13 @@ import ConspiracyService from "../services/ConspiracyService.js";
 let _conspiracyService = new ConspiracyService()
 
 function _drawConspiracy() {
+  debugger
   let conspiracies = _conspiracyService.Conspiracies
   let template = ''
   conspiracies.forEach(c => {
-    template += c.Template //MODEL TEMPLATE
+    template += c.Template
   })
-  document.getElementById('CONSPIRACY ID FOR LATER').innerHTML = template
+  document.getElementById('test-div').innerHTML = template
 }
 
 
