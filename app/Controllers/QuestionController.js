@@ -9,7 +9,7 @@ let _repo = _questionService.repository
 export default class QuestionController {
   constructor() {
     this.router = express.Router()
-      .get('', this.getAllQuestions)
+      .get('/category/:category', this.getQuestionsByCategory)
       .get('/:id', this.getQuestionById)
       .put('/:id', this.editQuestion)
       .post('', this.createQuestion)
@@ -17,9 +17,9 @@ export default class QuestionController {
       .use('*', this.defaultRoute)
   }
 
-  async getAllQuestions(req, res, next) {
+  async getQuestionsByCategory(req, res, next) {
     try {
-      let questions = await _repo.find({}).populate('userId')
+      let questions = await _repo.find({ category: req.params.category }).populate('userId')
       return res.send(questions)
     } catch (error) { next(error) }
   }
