@@ -12,23 +12,10 @@
 </head>
 
 <body>
-  <main class="container-fluid">
+  <main>
 
-    <header class="row" id="title">
-      <div class="col">
-        <h1>Posts Against Humanity</h1>
-      </div>
-    </header>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-    <!-- <div class="row" id="buttons">
-      <div id="btn-col" class="col">
-        <button class="btn btn-secondary">Conspiracy</button>
-        <button class="btn btn-secondary">Wrong Answers Only</button>
-        <button class="btn btn-secondary">Mad Libs</button>
-      </div>
-    </div> -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">DM INC</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
         aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,42 +27,87 @@
             <button class="btn btn-block btn-danger rounded-pill" onclick=""> Conspiracy </button>
           </li>
           <li class="nav-item">
-            <button class="btn btn-block btn-primary rounded-pill" onclick=""> Wrong Answer Only </button>
+            <button class="btn btn-block btn-secondary rounded-pill" onclick=""> Wrong Answer Only </button>
           </li>
           <li class="nav-item">
             <button class="btn btn-block btn-info rounded-pill" onclick=""> Custom Insanity </button>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder='"Adventure awaits you!"'>
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <!-- <div class="form-group">
-          <select class="custom-select">
-            <option selected="">Open this select menu</option>
-            <option selected value="1">Hashtag</option>
-            <option value="2">Keyword</option>
-            <option value="3">TimeStamp</option>
-          </select>
-        </div> -->
       </div>
     </nav>
+    <span id="search-span">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder='"Adventure awaits you!"'>
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </span>
 
-
-
-
-    <div class="row">
-      <div class="col"></div>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div id="carousel-item-01" class="carousel-item active">
+          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Primary card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="carousel-item-02" class="carousel-item">
+          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Primary card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="carousel-item-03" class="carousel-item">
+          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Primary card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="carousel-item-04" class="carousel-item">
+          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Primary card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
 
-    <div class="row">
-      <div class="col"></div>
-    </div>
+
+
+
 
   </main>
 
+  <footer>
 
-
+  </footer>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
