@@ -1,8 +1,9 @@
+import ConspiracyController from "./components/controllers/ConspiracyController.js";
 
 class App {
   constructor() {
     this.controllers = {
-
+      conspiracyController: new ConspiracyController()
     }
   }
 }

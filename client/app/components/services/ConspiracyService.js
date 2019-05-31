@@ -1,8 +1,8 @@
 import Conspiracy from "../../models/Conspiracy.js";
 
 //PRIVATE
-let _conspiracyApi({
-  baseURL: 'URL GOES HERE',
+let _conspiracyApi = axios.create({
+  baseURL: '//localhost:3000/api/questions',
   timeout: 3000
 })
 
@@ -33,7 +33,8 @@ export default class ConspiracyService {
   getAllConspiracies() {
     _conspiracyApi.get()
       .then(res => {
-        console.log({ res })
+        let data = res.data.data.map(d => new Conspiracy(d))
+        _setState('conspiracies', data)
       })
       .catch(err => {
         console.error(err)
