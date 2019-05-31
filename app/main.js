@@ -1,11 +1,13 @@
 import express from 'express'
 import './db/dbconfig'
+import cors from 'cors'
 
 let server = express()
 let bp = require('body-parser')
 
 server.use(bp.urlencoded({ extended: true }))
 server.use(bp.json())
+server.use(cors())
 
 //register routes
 import UserController from './controllers/UserController'
