@@ -1,0 +1,9 @@
+#nav-cat {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btn.btn-secondary.my-2.my-sm-0 {
+  
+}
