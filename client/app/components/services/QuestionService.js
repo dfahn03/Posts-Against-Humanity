@@ -28,21 +28,21 @@ export default class QuestionService {
 
   get Conspiracies() {
     let conspiracies = _state.questions.filter(q => q.category == "Conspiracy")
-    return conspiracies.map(c => new Question(c)).sort((a, b) => a.votes - b.votes)
+    return conspiracies.map(c => new Question(c)).sort((a, b) => b.votes - a.votes)[0]
   }
 
   get WrongAnswers() {
-    let wrongAnswers = _state.questions.filter(q => q.category == "Wrong-Answers")
-    return wrongAnswers.map(c => new Question(c)).sort((a, b) => a.votes - b.votes)
+    let wrongAnswers = _state.questions.filter(q => q.category == "Wrong-Answer")
+    return wrongAnswers.map(c => new Question(c)).sort((a, b) => b.votes - a.votes)[0]
   }
 
   get MadLibs() {
     let madLibs = _state.questions.filter(q => q.category == "Mad-Libs")
-    return madLibs.map(c => new Question(c)).sort((a, b) => a.votes - b.votes)
+    return madLibs.map(c => new Question(c)).sort((a, b) => b.votes - a.votes)[0]
   }
 
   get MostPopular() {
-    return _state.questions.sort((a, b) => a.votes - b.votes)
+    return _state.questions.sort((a, b) => b.votes - a.votes)[0]
   }
 
   getAllQuestions() {

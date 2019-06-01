@@ -16,8 +16,10 @@ export default class Question {
   }
 
   get Template() {
-    return `<div class="individual-post d-flex card mb-3">
+    return `
+    <div class="individual-post d-flex card mb-3">
       <h3 class="mix-text-difference card-header">${this.title}</h3>
+      <h4 class="mix-text-difference card-header">${this.category}</h4>
       <div class="card-body">
         <h5 class="mix-text-difference card-title">@${this.byLine}</h5>
       </div>
@@ -36,6 +38,7 @@ export default class Question {
       <div class="mix-text-difference card-footer text-muted">
       <small>${this.timestamp}</small>
       </div>
+    </div>
       `
   }
 }

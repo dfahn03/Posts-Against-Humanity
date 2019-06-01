@@ -6,39 +6,26 @@ let _questionService = new QuestionService()
 
 function _drawConspiracies() {
   let conspiracies = _questionService.Conspiracies
-  let template = ''
-  conspiracies.forEach(c => {
-    template += c.Template
-  })
-  document.getElementById('posts').innerHTML = template
+  // let template = ''
+  // conspiracies.forEach(c => {
+  //   template += c.Template
+  // })
+  document.querySelector('#posts').innerHTML = conspiracies.Template
 }
 
 function _drawWrongAnswers() {
   let wrongAnswers = _questionService.WrongAnswers
-  let template = ''
-  wrongAnswers.forEach(c => {
-    template += c.Template
-  })
-
-  document.getElementById('posts').innerHTML = template
+  document.querySelector('#posts').innerHTML = wrongAnswers.Template
 }
 
 function _drawMadLibs() {
   let madLibs = _questionService.MadLibs
-  let template = ''
-  madLibs.forEach(c => {
-    template += c.Template
-  })
-  document.getElementById('posts').innerHTML = template
+  document.querySelector('#posts').innerHTML = madLibs.Template
 }
 
 function _drawMostPopular() {
   let mostPopular = _questionService.MostPopular
-  let template = ''
-  mostPopular.forEach(c => {
-    template += c.Template
-  })
-  document.getElementById('posts').innerHTML = template
+  document.querySelector('#posts').innerHTML = mostPopular.Template
 }
 
 
@@ -54,24 +41,17 @@ export default class QuestionController {
     _questionService.getAllQuestions()
   }
 
-  renderQuestions() {
-    _drawConspiracies();
-    _drawMadLibs();
-    _drawWrongAnswers();
-    _drawMostPopular();
-  }
-
   getConspiracies() {
-    _questionService.Conspiracies
+    _drawConspiracies()
   }
   getWrongAnswers() {
-    _questionService.WrongAnswers
+    _drawWrongAnswers()
   }
   getMadLibs() {
-    _questionService.MadLibs
+    _drawMadLibs()
   }
   getMostPopular() {
-    _questionService.MostPopular
+    _drawMostPopular()
   }
 
   addQuestion(event) {
