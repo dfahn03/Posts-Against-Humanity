@@ -1,4 +1,4 @@
-html {
+body {
   background: url("../Abstract-Flowers-HD-Wallpaper.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -30,6 +30,7 @@ html {
   position: fixed;
   right: 0;
   margin-top: 5px;
+  z-index: 1;
 }
 
 .card {
@@ -41,6 +42,36 @@ html {
 justify-content: space-between;
 }
 
-.carousel-item #carouselExampleControls .carousel-inner {
-  background-image: none;
+#carouselTrendingIndicators {
+margin-top: 20vh;
+}
+
+
+.vote-icon {
+height: 40px; 
+}
+
+.like-body {
+  justify-content: space-between;
+
+}
+
+.post-img {
+height: auto;
+/* display: inline-block; */
+margin: 0 auto;
+}
+/* 
+
+.not-the-d-fleex {
+  justify-content: center;
+} */
+
+
+.individual-post {
+  background-color: #000000bf;
+  mix-blend-mode: difference;
+}
+.mix-text-difference {
+  mix-blend-mode: difference
 }
