@@ -6,11 +6,11 @@ let _commentsApi = axios.create({
 })
 
 let _state = {
-  commments: []
+  comments: []
 }
 
 let _subscribers = {
-  commments: []
+  comments: []
 }
 
 function _setState(propName, data) {
@@ -24,7 +24,7 @@ export default class CommentService {
   }
 
   get Comments() {
-    return _state.commments.map(c => new Comment(c)).sort((a, b) => a.values - b.values)
+    return _state.comments.map(c => new Comment(c)).sort((a, b) => a.values - b.values)
   }
 
   getAllComments() {

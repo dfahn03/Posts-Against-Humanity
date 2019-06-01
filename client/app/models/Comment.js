@@ -1,4 +1,4 @@
-import UserService from '../components/services/UserService'
+import UserService from '../components/services/UserService.js'
 
 let _us = new UserService()
 let _currentUser = {}
@@ -16,7 +16,7 @@ export default class Comment {
     this.body = data.body
     this.values = data.values
     this.questionId = data.questionId || data.questionId._id
-    this.userId = data.userId || data.userId._id
+    this.userId = data.userId && data.userId._id ? data.userId._id : {}
     this.timestamp = data.timestamp || moment(data.createdAt.split('T')[0], "YYYYMMDD").startOf('day').fromNow()
   }
 
