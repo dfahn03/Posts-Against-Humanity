@@ -29,7 +29,7 @@ export default class Question {
       <span>Be the first to leave a comment!</span>
       </ul>
       <div class="card-body like-body d-flex">
-      <a href="#" class="card-link"><img class="vote-icon" id="vote1" src="assets/thumbs_up_emoji_by_google_pFE_icon.ico"></img></a>
+      <a href="#" class="card-link"><img class="vote-icon" id="vote1" src="assets/cowboy-emoji.png"></img></a>
       <span>Public opinion: ${this.votes} Likes</span>
       <a href="#" class="card-link"><img class="vote-icon" id="vote2" src="assets/thumbs-down-emoji.png"></img></a>
       </div>
