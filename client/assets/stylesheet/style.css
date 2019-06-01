@@ -5,6 +5,28 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.signINBITCH {
+width: 20rem
+}
+
+input {
+  margin-left: 2em;
+}
+
+.signInBitch .form-control{
+  width: 75%;
+}
+
+#card {
+  margin-top: 22vh;
+height: 40vh;
+width: 20vw;
+}
+
+
+
+
 #nav-cat {
   display: flex;
   justify-content: space-between;
