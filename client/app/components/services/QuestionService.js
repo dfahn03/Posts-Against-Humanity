@@ -63,4 +63,11 @@ export default class QuestionService {
       })
       .catch(err => console.error(err))
   }
+
+  delete(id) {
+    _questionApi.delete(id)
+      .then(res => {
+        this.getAllQuestions()
+      })
+  }
 }

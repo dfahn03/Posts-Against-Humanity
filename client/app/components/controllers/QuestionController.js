@@ -1,5 +1,4 @@
 import QuestionService from "../services/QuestionService.js";
-import { format } from "path";
 
 //PRIVATE
 
@@ -86,6 +85,10 @@ export default class QuestionController {
     }
     _questionService.addQuestion(questionData)
     form.reset()
+  }
+
+  delete(id) {//delete by user id, lets figure this out
+    _questionService.delete(id)
   }
 
 }
