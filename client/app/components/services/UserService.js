@@ -6,8 +6,9 @@ let _userApi = axios.create({
   timeout: 3000
 })
 
+
 let _state = {
-  users: []
+  user: {}
 }
 
 let _subscribers = {
@@ -26,15 +27,15 @@ export default class UserService {
     _subscribers[propName].push(fn)
   }
 
-  get Users() {
-    return _state.users.map(u => new User(u))
+  get User() {
+    return new User(_state.user)
   }
 
-  getAllUsers() {
+  getCurrentUser() {
     _userApi.get()
       .then(res => {
         let data = res.data.map(d => new User(d))
-        _setState('users', data)
+        _setState('user', data)
       })
       .catch(err => {
         console.error(err)
@@ -44,7 +45,7 @@ export default class UserService {
   addUser(userData) {
     _userApi.post('', userData)
       .then(res => {
-        this.getAllUsers()
+        this.getCurrentUser()
       })
       .catch(err => console.error(err))
   }
@@ -52,7 +53,7 @@ export default class UserService {
   delete(id) {
     _userApi.delete(id)
       .then(res => {
-        this.getAllUsers()
+        this.getCurrentUser()
       })
   }
 
