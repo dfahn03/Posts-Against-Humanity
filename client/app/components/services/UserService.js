@@ -7,11 +7,11 @@ let _userApi = axios.create({
 })
 
 let _state = {
-  users: []
+  user: {}
 }
 
 let _subscribers = {
-  users: []
+  user: []
 }
 
 function _setState(propName, data) {
@@ -19,41 +19,46 @@ function _setState(propName, data) {
   _subscribers[propName].forEach(fn => fn());
 }
 
-//PUBLIC
+let _us
 
+//PUBLIC
 export default class UserService {
+  constructor() {
+    if (_us) {
+      return _us
+    }
+    _us = this
+  }
   addSubscriber(propName, fn) {
     _subscribers[propName].push(fn)
   }
 
-  get Users() {
-    return _state.users.map(u => new User(u))
+  get User() {
+    return _state.user
   }
 
-  getAllUsers() {
-    _userApi.get()
+  async register(user) {
+    try {
+      let res = await _userApi.post('/', user)
+      _setState('user', new User(res.data))
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  login(userData) {
+    _userApi.get(userData.name)
       .then(res => {
-        let data = res.data.map(d => new User(d))
-        _setState('users', data)
+        let data = new User(res.data)
+        _setState('user', data)
       })
       .catch(err => {
         console.error(err)
       })
   }
 
-  addUser(userData) {
-    _userApi.post('', userData)
-      .then(res => {
-        this.getAllUsers()
-      })
-      .catch(err => console.error(err))
-  }
-
-  delete(id) {
-    _userApi.delete(id)
-      .then(res => {
-        this.getAllUsers()
-      })
+  logout() {
+    _setState('user', {})
   }
 
 }

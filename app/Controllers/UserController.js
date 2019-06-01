@@ -28,6 +28,9 @@ export default class UserController {
   async getUserByName(req, res, next) {
     try {
       let user = await _repo.findOne({ name: req.params.name })
+      if (!user) {
+        return res.status(401).send({ error: { message: "Invalid Login" } })
+      }
       return res.send(user)
     } catch (error) { next(error) }
   }
