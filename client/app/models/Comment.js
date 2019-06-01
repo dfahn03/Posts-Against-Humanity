@@ -3,10 +3,9 @@ export default class Comment {
     this._id = data._id
     this.category = data.category
     this.values = data.values
-    this.questionId = data.questionId
+    this.questionId = data.questionId || data.questionId._id
+    this.userId = data.userId || data.userId._id
   }
 
-  get Template() {
 
-  }
 }

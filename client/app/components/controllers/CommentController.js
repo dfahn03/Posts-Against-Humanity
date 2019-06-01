@@ -30,6 +30,7 @@ export default class CommentController {
   }
 
   delete(id) {//delete by user id, lets figure this out
+
     _commentService.delete(id)
   }
 }

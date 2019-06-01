@@ -43,8 +43,8 @@ export default class CommentService {
         this.getAllComments()
       })
       .catch(err => console.error(err))
-
   }
+
   delete(id) {
     _commentsApi.delete(id)
       .then(res => {

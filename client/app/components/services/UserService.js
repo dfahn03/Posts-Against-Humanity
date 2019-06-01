@@ -40,4 +40,20 @@ export default class UserService {
         console.error(err)
       })
   }
+
+  addUser(userData) {
+    _userApi.post('', userData)
+      .then(res => {
+        this.getAllUsers()
+      })
+      .catch(err => console.error(err))
+  }
+
+  delete(id) {
+    _userApi.delete(id)
+      .then(res => {
+        this.getAllUsers()
+      })
+  }
+
 }
