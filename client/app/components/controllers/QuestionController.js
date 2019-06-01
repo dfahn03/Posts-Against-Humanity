@@ -10,7 +10,7 @@ function _drawConspiracies() {
   conspiracies.forEach(c => {
     template += c.Template
   })
-  document.getElementById('test-div').innerHTML = template
+  document.getElementById('posts').innerHTML = template
 }
 
 function _drawWrongAnswers() {
@@ -20,7 +20,7 @@ function _drawWrongAnswers() {
     template += c.Template
   })
 
-  document.getElementById('test-div').innerHTML = template
+  document.getElementById('posts').innerHTML = template
 }
 
 function _drawMadLibs() {
@@ -29,7 +29,7 @@ function _drawMadLibs() {
   madLibs.forEach(c => {
     template += c.Template
   })
-  document.getElementById('test-div').innerHTML = template
+  document.getElementById('posts').innerHTML = template
 }
 
 function _drawMostPopular() {
@@ -38,7 +38,7 @@ function _drawMostPopular() {
   mostPopular.forEach(c => {
     template += c.Template
   })
-  document.getElementById('test-div').innerHTML = template
+  document.getElementById('posts').innerHTML = template
 }
 
 
@@ -53,4 +53,18 @@ export default class QuestionController {
 
     _questionService.getAllQuestions()
   }
+
+  getConspiracies() {
+    _questionService.Conspiracies
+  }
+  getWrongAnswers() {
+    _questionService.WrongAnswers
+  }
+  getMadLibs() {
+    _questionService.MadLibs
+  }
+  getMostPopular() {
+    _questionService.MostPopular
+  }
+
 }
