@@ -1,11 +1,12 @@
-import QuestionService from "../services/QuestionService.js";
+import UserService from "../services/UserService.js";
+import { format } from "path";
 
 //PRIVATE
 
-let _questionService = new QuestionService()
+let _userService = new UserService()
 
-function _drawConspiracies() {
-  let conspiracies = _questionService.Conspiracies
+function _drawUsers() {
+  let conspiracies = _userService.Conspiracies
   let template = ''
   conspiracies.forEach(c => {
     template += c.Template
@@ -14,7 +15,7 @@ function _drawConspiracies() {
 }
 
 function _drawWrongAnswers() {
-  let wrongAnswers = _questionService.WrongAnswers
+  let wrongAnswers = _userService.WrongAnswers
   let template = ''
   wrongAnswers.forEach(c => {
     template += c.Template
@@ -24,7 +25,7 @@ function _drawWrongAnswers() {
 }
 
 function _drawMadLibs() {
-  let madLibs = _questionService.MadLibs
+  let madLibs = _userService.MadLibs
   let template = ''
   madLibs.forEach(c => {
     template += c.Template
@@ -33,7 +34,7 @@ function _drawMadLibs() {
 }
 
 function _drawMostPopular() {
-  let mostPopular = _questionService.MostPopular
+  let mostPopular = _userService.MostPopular
   let template = ''
   mostPopular.forEach(c => {
     template += c.Template
@@ -44,17 +45,17 @@ function _drawMostPopular() {
 
 //PUBLIC
 
-export default class QuestionController {
+export default class UserController {
   constructor() {
-    _questionService.addSubscriber('questions', _drawConspiracies)
-    _questionService.addSubscriber('questions', _drawWrongAnswers)
-    _questionService.addSubscriber('questions', _drawMadLibs)
-    _questionService.addSubscriber('questions', _drawMostPopular)
+    _userService.addSubscriber('users', _drawConspiracies)
+    _userService.addSubscriber('users', _drawWrongAnswers)
+    _userService.addSubscriber('users', _drawMadLibs)
+    _userService.addSubscriber('users', _drawMostPopular)
 
-    _questionService.getAllQuestions()
+    _userService.getAllUsers()
   }
 
-  renderQuestions() {
+  renderUsers() {
     _drawConspiracies();
     _drawMadLibs();
     _drawWrongAnswers();
@@ -62,33 +63,33 @@ export default class QuestionController {
   }
 
   getConspiracies() {
-    _questionService.Conspiracies
+    _userService.Conspiracies
   }
   getWrongAnswers() {
-    _questionService.WrongAnswers
+    _userService.WrongAnswers
   }
   getMadLibs() {
-    _questionService.MadLibs
+    _userService.MadLibs
   }
   getMostPopular() {
-    _questionService.MostPopular
+    _userService.MostPopular
   }
 
-  addQuestion(event) {
+  addUser(event) {
     event.preventDefault();
     let form = event.target
-    let questionData = {
+    let userData = {
       title: form.title.value,
       imgUrl: form.imgUrl.value,
       category: form.category.value,
       body: form.body.value
     }
-    _questionService.addQuestion(questionData)
+    _userService.addUser(userData)
     form.reset()
   }
 
   delete(id) {//delete by user id, lets figure this out
-    _questionService.delete(id)
+    _userService.delete(id)
   }
 
 }
