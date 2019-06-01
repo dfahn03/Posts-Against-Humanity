@@ -1,4 +1,4 @@
-import Comments from "../../models/Comments";
+import Comment from "../../models/Comment.js";
 
 let _commentsApi = axios.create({
   baseURL: '//localhost:3000/api/comments',
@@ -24,7 +24,21 @@ export default class CommentService {
   }
 
   get Comments() {
-    return _state.commments.map(c => new Comment(c))
+    return _state.commments.map(c => new Comment(c)).sort((a, b) => a.values - b.values)
+  }
+
+  getAllComments() {
+    _commentsApi.get()
+      .then(res => {
+        let data = res.data.map(d => new Comment(d))
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
+  addComments() {
+
   }
 
 

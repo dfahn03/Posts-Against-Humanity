@@ -1,4 +1,5 @@
 import QuestionService from "../services/QuestionService.js";
+import { format } from "path";
 
 //PRIVATE
 
@@ -54,6 +55,13 @@ export default class QuestionController {
     _questionService.getAllQuestions()
   }
 
+  renderQuestions() {
+    _drawConspiracies();
+    _drawMadLibs();
+    _drawWrongAnswers();
+    _drawMostPopular();
+  }
+
   getConspiracies() {
     _questionService.Conspiracies
   }
@@ -65,6 +73,19 @@ export default class QuestionController {
   }
   getMostPopular() {
     _questionService.MostPopular
+  }
+
+  addQuestion(event) {
+    event.preventDefault();
+    let form = event.target
+    let questionData = {
+      title: form.title.value,
+      imgUrl: form.imgUrl.value,
+      category: form.category.value,
+      body: form.body.value
+    }
+    _questionService.addQuestion(questionData)
+    form.reset()
   }
 
 }
