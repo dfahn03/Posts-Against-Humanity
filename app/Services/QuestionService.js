@@ -10,8 +10,9 @@ let _schema = new mongoose.Schema({
   category: { type: String, enum: ['Conspiracy', 'Wrong-Answer', 'Mad-Libs'], required: true },
   body: { type: String, required: true },
   votes: { type: Number, default: 0 },
-  userId: { type: ObjectId, ref: 'user', required: true }
-}, { timestamps: true })
+  userId: { type: ObjectId, ref: 'user', required: true },
+  createdAt: { type: Date, required: true, default: new Date().toLocaleString() }
+})
 
 //PUBLIC
 export default class QuestionService {

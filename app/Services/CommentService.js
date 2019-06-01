@@ -9,8 +9,9 @@ let _schema = new mongoose.Schema({
   imgUrl: { type: String },
   values: { type: Number, default: 0 },
   questionId: { type: ObjectId, ref: 'question', required: true },
-  userId: { type: ObjectId, ref: 'user', required: true }
-}, { timestamps: true })
+  userId: { type: ObjectId, ref: 'user', required: true },
+  createdAt: { type: Date, required: true, default: new Date().toLocaleString() }
+})
 
 //PUBLIC
 export default class CommentService {
