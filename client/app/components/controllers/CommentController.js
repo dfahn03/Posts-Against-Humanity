@@ -25,8 +25,11 @@ export default class CommentController {
     let commentData = {
       body: form.body.value
     }
-    _commentService.addComments
+    _commentService.addComments(commentData)
+    form.reset()
   }
 
-
+  delete(id) {//delete by user id, lets figure this out
+    _commentService.delete(id)
+  }
 }

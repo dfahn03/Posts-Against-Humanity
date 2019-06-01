@@ -37,8 +37,19 @@ export default class CommentService {
       })
   }
 
-  addComments() {
+  addComments(commentData) {
+    _commentsApi.post('', commentData)
+      .then(res => {
+        this.getAllComments()
+      })
+      .catch(err => console.error(err))
 
+  }
+  delete(id) {
+    _commentsApi.delete(id)
+      .then(res => {
+        this.getAllComments()
+      })
   }
 
 

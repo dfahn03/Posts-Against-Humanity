@@ -87,4 +87,8 @@ export default class QuestionController {
     form.reset()
   }
 
+  delete(id) {//delete by user id, lets figure this out
+    _questionService.delete(id)
+  }
+
 }
