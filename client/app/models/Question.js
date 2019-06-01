@@ -4,17 +4,20 @@ export default class Question {
     this.category = data.category
     this.body = data.body
     this.votes = data.votes
+    this.byLine = data.userId.name
+    this.image = data.imgUrl
+    this.title = data.title
   }
 
   hashtags() {
-    `<a href="#">#${this.category}</a>`
+    return `<a href="#">#${this.category}</a>`
   }
 
   get Template() {
     return `<div class="individual-post d-flex not-the-d-fleex card mb-3">
-      <h3 class="mix-text-difference card-header">Hitler Survived WWII</h3>
+      <h3 class="mix-text-difference card-header">${this.title}</h3>
       <div class="card-body">
-      <h5 class="mix-text-difference card-title">Post By:Micaiah Evans</h5>
+        <h5 class="mix-text-difference card-title">${this.byLine}</h5>
       <h6 class="card-subtitle text-muted">${this.hashtags()}
       </h6>
       </div>
@@ -22,10 +25,8 @@ export default class Question {
       <div class="card-body">
       <p class="mix-text-difference card-text">${this.body}</p>
       </div>
-      <ul class="comment-section list-group list-group-flush">
-      <li style="background-color: #00000000;" class="comment list-group-item">comment</li>
-      <li style="background-color: #00000000;" class="comment list-group-item">comment</li>
-      <li style="background-color: #00000000;" class="comment list-group-item">comment</li>
+      <ul id="${this._id}comments" class="comment-section list-group list-group-flush">
+      <span>Be the first to leave a comment!</span>
       </ul>
       <div class="card-body like-body d-flex">
       <a href="#" class="card-link"><img class="vote-icon" src="assets/thumbs_up_emoji_by_google_pFE_icon.ico"></img></a>
