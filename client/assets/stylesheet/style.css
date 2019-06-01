@@ -4,6 +4,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  user-select: none;
 }
 
 .signINBITCH {
@@ -69,8 +70,11 @@ margin-top: 20vh;
 }
 
 
-.vote-icon {
+#vote1 {
 height: 40px; 
+}
+#vote2 {
+height: 50px; 
 }
 
 .like-body {
@@ -85,14 +89,16 @@ margin: 0 auto;
 }
 /* 
 
+
 .not-the-d-fleex {
   justify-content: center;
 } */
 
 
+
 .individual-post {
   background-color: #000000bf;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 }
 .mix-text-difference {
   mix-blend-mode: difference

@@ -9,7 +9,7 @@ function _drawComments() {
   comments.forEach(comment => {
     template += comment.Template
   })
-  document.getElementById('')//not sure how to structure this
+  document.getElementById('comment.questionId')//not sure how to structure this
 }
 
 export default class CommentController {
