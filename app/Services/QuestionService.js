@@ -6,6 +6,7 @@ let ObjectId = mongoose.Schema.Types.ObjectId
 
 let _schema = new mongoose.Schema({
   title: { type: String, required: true },
+  imgUrl: { type: String },
   category: { type: String, enum: ['Conspiracy', 'Wrong-Answer', 'Mad-Libs'], required: true },
   body: { type: String, required: true },
   votes: { type: Number, default: 0 },
