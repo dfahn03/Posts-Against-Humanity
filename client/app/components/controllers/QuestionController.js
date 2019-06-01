@@ -26,7 +26,8 @@ function _drawMadLibs() {
 function _drawMostPopular() {
   let mostPopular = _questionService.MostPopular
   document.querySelector('#posts').innerHTML = mostPopular.Template
-  // document.querySelector('#posts').innerHTML = mostPopular.Template
+
+  document.querySelector('#posts').innerHTML = mostPopular.Template
 }
 
 
