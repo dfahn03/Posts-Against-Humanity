@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+export default class HomePage {
+  constructor() {
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="shortcut icon" href="assets/GandalfTheHobbitFilmseries.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="assets/stylesheet/style.css">
-  <title>Posts Against Humanity</title>
-</head>
+  }
 
-<body id="background">
-  <main>
+
+  get Template() {
+    return `
+    <main>
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -25,8 +17,7 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul id="nav-cat" class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <button class="btn btn-block btn-danger rounded-pill"
-              onclick="app.controllers.questionController.getConspiracies()"> Conspiracy </button>
+            <button class="btn btn-block btn-danger rounded-pill" onclick=""> Conspiracy </button>
           </li>
           <li class="nav-item">
             <button class="btn btn-block btn-secondary rounded-pill" onclick=""> Wrong Answer Only </button>
@@ -111,54 +102,6 @@
 
   <footer>
 
-  </footer>
-<<<<<<< HEAD
-=======
-
->>>>>>> 6f23969991a87f341c2059b07db7d4637765d986
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-  <script src="app/main.js" type="module"></script>
-</body>
-
-</html>
-
-
-
-
-<!-- 
-<div class="individual-post d-flex not-the-d-fleex card mb-3">
-  <h3 class="mix-text-difference card-header">Hitler Survived WWII</h3>
-  <div class="card-body">
-    <h5 class="mix-text-difference card-title">Post By:Micaiah Evans</h5>
-    <h6 class="card-subtitle text-muted"><a href="#">#conspiracy</a>,<a href="#">#hitler</a>,<a href="#">#worldwar2</a>
-    </h6>
-  </div>
-  <img class="post-img" style="width: 50%;" src="/assets/hitler-in-old-age-in-south-america.png" alt="Post image">
-  <div class="card-body">
-    <p class="mix-text-difference card-text">Many believe that, while the official report states Adolf Hitler
-      commited suicide shortly
-      after the war, he may have actually escaped. Many claim that official FBI reports may have information
-      supporting this. Such papaers were said to be released within the first two weeks of Presedent Trumps term.
-    </p>
-  </div>
-  <ul class="comment-section list-group list-group-flush">
-    <li style="background-color: #00000000;" class="comment list-group-item">comment</li>
-    <li style="background-color: #00000000;" class="comment list-group-item">comment</li>
-    <li style="background-color: #00000000;" class="comment list-group-item">comment</li>
-  </ul>
-  <div class="card-body like-body d-flex">
-    <a href="#" class="card-link"><img class="vote-icon" src="assets/thumbs_up_emoji_by_google_pFE_icon.ico"></img></a>
-    <a href="#" class="card-link"><img class="vote-icon" src="assets/1f595_nkA_icon.ico"></img></a>
-  </div>
-  <div class="mix-text-difference card-footer text-muted">
-    2 days ago
-  </div> -->
+  </footer>`
+  }
+}
