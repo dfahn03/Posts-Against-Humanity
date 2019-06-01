@@ -61,83 +61,171 @@
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
                 content.
               </p>
-            </div>
-          </div>
-          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h4 class="card-title">Primary card title</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-            </div>
-          </div>
-          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h4 class="card-title">Primary card title</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-            </div>
-          </div>
-          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h4 class="card-title">Primary card title</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div id="carousel-item-02 " class="carousel-item d-flex">
-          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h4 class="card-title">Primary card title</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div id="carousel-item-03" class="carousel-item d-flex">
 
-        </div>
-        <div id="carousel-item-04" class="carousel-item d-flex">
+              <div id="login-page">
+                <div class="d-flex justify-content-center" style="width: 100%; height: 100%;">
 
-        </div>
-      </div>
-    </div>
+                  <div id="card" class="card text-white bg-primary mb-3">
+                    <form onsubmit="app.controllers.userController.login(event)">
+                      <fieldset>
+                        <div class="card-header">Login</div>
 
-    <div class="container" id="posts">
+                        <div class="signINBITCH form-group">
+                          <span id="form-padding">
+                            <label for="InputUserName">Username</label>
+                            <input type="UserName" class="form-control" name="name" id="InputUserName"
+                              aria-describedby="UserNameHelp" placeholder="Enter UserName">
+                            <small id="UserNameHelp" class="form-text text-muted">We will most definitely share your
+                              login
+                              information!</small>
+                        </div>
+                        </span>
+                      </fieldset>
+                      <div class="btn-group">
+                        <button type="submit" class="btn btn-info">Login</button>
+                        <button type="button" onclick="app.controllers.userController.register(event)"
+                          class="btn btn-primary">Register</button>
+                      </div>
+                    </form>
+                  </div>
 
-    </div>
+                </div>
+              </div>
 
 
+              <div id="main-page" class="d-none">
 
-  </main>
+                <main>
+                  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-  <footer>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
 
-  </footer>
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                      <ul id="nav-cat" class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <button class="btn btn-block btn-danger rounded-pill"
+                            onclick="app.controllers.questionController.getConspiracies()"> Conspiracy </button>
+                        </li>
+                        <li class="nav-item">
+                          <button class="btn btn-block btn-secondary rounded-pill" onclick=""> Wrong Answer Only
+                          </button>
+                        </li>
+                        <li class="nav-item">
+                          <button class="btn btn-block btn-info rounded-pill" onclick=""> Custom Insanity </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                  <span id="search-span">
+                    <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="text" placeholder='"Adventure awaits you!"'>
+                      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                  </span>
+
+                  <div id="carouselTrendingIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div id="carousel-item-01" class="carousel-item d-flex active">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                          <div class="card-header">Header</div>
+                          <div class="card-body">
+                            <h4 class="card-title">Primary card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                              of the
+                              card's
+                              content.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                          <div class="card-header">Header</div>
+                          <div class="card-body">
+                            <h4 class="card-title">Primary card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                              of the
+                              card's
+                              content.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                          <div class="card-header">Header</div>
+                          <div class="card-body">
+                            <h4 class="card-title">Primary card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                              of the
+                              card's
+                              content.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                          <div class="card-header">Header</div>
+                          <div class="card-body">
+                            <h4 class="card-title">Primary card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                              of the
+                              card's
+                              content.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="carousel-item-02 " class="carousel-item d-flex">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                          <div class="card-header">Header</div>
+                          <div class="card-body">
+                            <h4 class="card-title">Primary card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                              of the card's
+                              content.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="carousel-item-03" class="carousel-item d-flex">
+
+                      </div>
+                      <div id="carousel-item-04" class="carousel-item d-flex">
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="container" id="posts">
+
+                  </div>
 
 
 
+                </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-  <script src="app/main.js" type="module"></script>
+                <footer>
+
+                </footer>
+              </div>
+
+              <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+              <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+                integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+                crossorigin="anonymous"></script>
+              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+                integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+                crossorigin="anonymous"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+              <script src="app/main.js" type="module"></script>
 </body>
 
 </html>

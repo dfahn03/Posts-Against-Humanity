@@ -41,4 +41,17 @@ export default class Question {
     </div>
       `
   }
+
+  get cTemplate(button) {
+    return `
+    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+      <div class="card-body">
+        <h4 class="card-title">${this.title}</h4>
+        <h5 class="card-title">${this.category}</h5>
+        <button class="btn btn-pill" onclick="app.controllers.questionController.getConspiracies()"</button>
+      </div>
+    </div>
+    
+    `
+  }
 }
