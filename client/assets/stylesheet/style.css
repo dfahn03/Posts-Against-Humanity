@@ -7,16 +7,14 @@ body {
   user-select: none;
 }
 
-.signINBITCH {
+/* .signINBITCH {
 width: 20rem
-}
+} */
 
-input {
-  margin-left: 2em;
-}
-
-.signInBitch .form-control{
-  width: 75%;
+.signIn .login-input-container{
+  width: 80%;
+  margin: auto;
+  padding: 8px 10px;
 }
 
 #card {
@@ -31,7 +29,9 @@ width: 20vw;
 #nav-cat {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 67%;
+  margin-left: 11vw;
+
 }
 
 .btn.btn-secondary.my-2.my-sm-0 {
@@ -79,7 +79,6 @@ height: 50px;
 
 .like-body {
   justify-content: space-between;
-
 }
 
 .post-img {
@@ -87,9 +86,8 @@ height: auto;
 /* display: inline-block; */
 margin: 0 auto;
 }
+
 /* 
-
-
 .not-the-d-fleex {
   justify-content: center;
 } */
@@ -102,4 +100,89 @@ margin: 0 auto;
 }
 .mix-text-difference {
   mix-blend-mode: difference
+}
+#btnGroupDrop1 {
+  background-image: linear-gradient(
+    to bottom left,
+    pink,
+    purple,
+    orange,
+    red
+  )
+}
+
+#dropdown-relevance {
+  text-shadow: 0px 0px 15px #cc00ff,0px 0px 15px #cc00ff,0px 0px 15px #cc00ff;
+  color: #ff15eb;
+}
+
+#dropdown-date {
+  text-shadow: 0px 0px 15px #ff7300,0px 0px 15px #ff7300,0px 0px 15px #ff7300;
+  color: #f8f559;
+}
+
+#navbar-sortby-dropdown {
+  background-color: #00000000;
+  border: none;
+}
+
+#log-out-btn {
+position: fixed;
+top: 6px;
+right: 12px;
+cursor: pointer;
+}
+
+#sortby-btn-group {
+  float: right;
+}
+
+
+#nav-item1 {
+text-shadow: 0px 0px 15px #ff0000,0px 0px 15px #ff0000,0px 0px 15px #ff0000;
+  color: #ff00ea;
+}
+#nav-item2 {
+text-shadow: 0px 0px 15px #00c3ff,0px 0px 15px #00c3ff,0px 0px 15px #00c3ff;
+  color: #00c3ff;
+}
+#nav-item3 {
+  text-shadow: 0px 0px 15px #ff00d4,0px 0px 15px #fffb00,0px 0px 15px #ff0000;
+  color: #6959f8;
+}
+
+#nav-item1,
+#nav-item2,
+#nav-item3{
+  transition: all .15s linear;
+  opacity: .85;
+  cursor: pointer;
+}
+#nav-item1:hover,
+#nav-item2:hover,
+#nav-item3:hover{
+opacity: 1; 
+}
+
+#UserNameHelp {
+  justify-content: center;
+}
+
+#adventure {
+  text-shadow: 0px 0px 5px #00ff80,0px 0px 5px #00ff80;
+  color: #5ef859;
+  background-color: #00000000;
+}
+
+#adventure-btn {
+  text-shadow: 0px 0px 15px #ffbb00,0px 0px 15px #ffbb00,0px 0px 15px #ffbb00;
+  color: #fffb00;
+  background-color: #00000000;
+}
+
+.login-form{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

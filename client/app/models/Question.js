@@ -42,7 +42,7 @@ export default class Question {
       `
   }
 
-  get cTemplate(button) {
+  get cTemplate() {
     return `
     <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
       <div class="card-body">
