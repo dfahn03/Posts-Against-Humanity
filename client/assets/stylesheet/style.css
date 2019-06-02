@@ -15,7 +15,7 @@ body {
 
 #card {
   margin-top: 30vh;
-  height: 40vh;
+  height: 35vh;
   width: 30vw;
 }
 .login-form{
@@ -24,16 +24,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .login-username {
   margin-bottom: 0px;
+  margin-top: 10px;
+  font-size: 18px;
 }
 .form-control {
   text-align: center;
 }
 .login-comment {
   margin-bottom: 10px;
+  font-size: 12px;
 }
+
 
 #nav-cat {
   display: flex;
