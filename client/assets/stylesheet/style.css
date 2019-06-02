@@ -7,10 +7,6 @@ body {
   user-select: none;
 }
 
-/* .signINBITCH {
-width: 20rem
-} */
-
 .signIn .login-input-container{
   width: 80%;
   margin: auto;
@@ -22,9 +18,6 @@ width: 20rem
 height: 40vh;
 width: 20vw;
 }
-
-
-
 
 #nav-cat {
   display: flex;
@@ -38,7 +31,6 @@ width: 20vw;
   float: right;
 }
 
-
 #navbar {
   position: sticky;
   top: 0;
@@ -47,7 +39,6 @@ width: 20vw;
   z-index: 1;
   width: 100%;
 }
-
 
 #search-span {
   position: fixed;
@@ -63,6 +54,7 @@ width: 20vw;
 .carousel-item {
     display: flex;
 justify-content: space-between;
+  interval: 8000;
 }
 
 #carouselTrendingIndicators {
@@ -86,13 +78,6 @@ height: auto;
 /* display: inline-block; */
 margin: 0 auto;
 }
-
-/* 
-.not-the-d-fleex {
-  justify-content: center;
-} */
-
-
 
 .individual-post {
   background-color: #000000bf;

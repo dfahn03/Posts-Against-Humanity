@@ -43,7 +43,6 @@ export default class UserController {
   register(event) {
     event.preventDefault();
     let form = event.target.parentElement.parentElement
-    debugger
     let userData = {
       name: form.name.value,
     }
