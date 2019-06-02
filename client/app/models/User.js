@@ -6,4 +6,10 @@ export default class User {
     this.id = data._id
   }
 
+  get CurrentUserTemplate() {
+    return `
+    <p class="currentUser">User: ${this.name}</p>
+    `
+  }
+
 }
