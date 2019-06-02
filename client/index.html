@@ -29,11 +29,13 @@
               <small class="form-text text-muted login-comment">We
                 will most definitely share your login
                 information!</small>
-              <button type="submit" class="btn btn-success loginButtons">Login</button>
-              <button type="button" onclick="app.controllers.userController.register(event)"
-                class="btn btn-info loginButtons">Register</button>
             </div>
           </fieldset>
+          <div class="btn-group loginBtns">
+            <button type="submit" class="btn btn-success">Login</button>
+            <button type="button" onclick="app.controllers.userController.register(event)"
+              class="btn btn-info ml-1">Register</button>
+          </div>
         </form>
       </div>
     </div>

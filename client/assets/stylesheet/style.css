@@ -38,6 +38,14 @@ body {
   margin-bottom: 10px;
   font-size: 12px;
 }
+.loginBtns {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding-bottom: 10px;
+}
 
 
 #nav-cat {
