@@ -17,37 +17,27 @@
   <div id="login-page">
     <div class="d-flex justify-content-center" style="width: 100%; height: 100%;">
 
-      <div id="card" class="card text-white bg-primary mb-3">
+      <div id="card" class="card text-white bg-primary">
         <form class="login-form" onsubmit="app.controllers.userController.login(event)">
           <div class="card-header">Login</div>
           <fieldset>
-
             <div class="signIn form-group text-center">
-              <label for="InputUserName">Username</label>
+              <label for="InputUserName" class="login-username">Username</label>
               <div class="login-input-container">
                 <input type="UserName" class="form-control" name="name" aria-describedby="UserNameHelp"
                   placeholder="Enter UserName">
               </div>
-              <small id="UserNameHelp" class="form-text text-muted">We
+              <small class="form-text text-muted login-comment">We
                 will most definitely share your login
                 information!</small>
+              <button type="button" class="btn btn-success"
+                onclick="app.controllers.userController.login(event)">Login</button>
+              <button type="button" onclick="app.controllers.userController.register(event)"
+                class="btn btn-info">Register</button>
             </div>
           </fieldset>
-          <div class="btn-group">
-            <button type="submit" class="btn btn-info">Login</button>
-            <button type="button" onclick="app.controllers.userController.register(event)"
-              class="btn btn-primary">Register</button>
-          </div>
         </form>
       </div>
-      </nav>
-      <!-- <span id="search-span">
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder='"Adventure awaits you!"'>
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </span> -->
-
     </div>
   </div>
 
