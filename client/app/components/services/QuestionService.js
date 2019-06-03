@@ -44,6 +44,12 @@ export default class QuestionService {
   get MostPopular() {
     return _state.questions.sort((a, b) => b.votes - a.votes)[0]
   }
+  get SecondMostPopular() {
+    return _state.questions.sort((a, b) => b.votes - a.votes)[1]
+  }
+  get ThirdMostPopular() {
+    return _state.questions.sort((a, b) => b.votes - a.votes)[2]
+  }
 
   getAllQuestions() {
     _questionApi.get()

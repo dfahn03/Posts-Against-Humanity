@@ -69,62 +69,25 @@
       <span id="log-out-btn" onclick="app.controllers.userController.logout()" class="badge badge-danger">Logout</span>
     </nav>
 
-    <div id="carouselTrendingIndicators" class="carousel slide" data-ride="carousel">
+    <div id="multi-item-example" class="carousel slide carousel-multi-item container" data-ride="carousel">
+      <div class="controls-top">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+      </div>
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#multi-item-example" data-slide-to="0" class="active bg-dark"
+          style="height: 5px; margin-bottom: -30px; margin-top: 20px;"></li>
       </ol>
-      <div class="carousel-inner">
-        <div id="carousel-item-01" class="carousel-item d-flex active">
-          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h4 class="card-title">Primary card title</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-            </div>
-          </div>
-          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h4 class="card-title">Primary card title</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-            </div>
-          </div>
-          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h4 class="card-title">Primary card title</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-            </div>
-          </div>
-          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h4 class="card-title">Primary card title</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div id="carousel-item-02" class="carousel-item d-flex">
-
-        </div>
-        <div id="carousel-item-03" class="carousel-item d-flex">
-
-        </div>
-        <div id="carousel-item-04" class="carousel-item d-flex">
-
+      <div class="carousel-inner" role="listbox">
+        <div class="row carousel-item active d-flex justify-content-center align-items-center text-white">
+          <div class="col-md-4 px-1" id="mpq1"></div>
+          <div class="col-md-4 px-1" id="mpq2"></div>
+          <div class="col-md-4 px-1" id="mpq3"></div>
         </div>
       </div>
     </div>
+
+
 
 
     <div class="d-flex" style="width: 100%">
@@ -193,7 +156,66 @@
       <span id="log-out-btn" onclick="app.controllers.userController.logout()" class="badge badge-danger">Logout</span>
     </nav> -->
 
+<!-- <div id="carouselTrendingIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div id="carousel-item-01" class="carousel-item d-flex active">
+              <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h4 class="card-title">Primary card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.
+                  </p>
+                </div>
+              </div>
+              <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h4 class="card-title">Primary card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.
+                  </p>
+                </div>
+              </div>
+              <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h4 class="card-title">Primary card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.
+                  </p>
+                </div>
+              </div>
+              <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h4 class="card-title">Primary card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div id="carousel-item-02" class="carousel-item d-flex">
 
+            </div>
+            <div id="carousel-item-03" class="carousel-item d-flex">
+
+            </div>
+            <div id="carousel-item-04" class="carousel-item d-flex">
+
+            </div>
+          </div>
+        </div> -->
 
 
 <!-- 

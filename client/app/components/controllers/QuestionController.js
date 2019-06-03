@@ -12,6 +12,14 @@ function _drawConspiracies() {
   // })
   document.querySelector('#posts').innerHTML = conspiracies.Template
 }
+function _drawMPQuestions() {
+  let mpquestion = _questionService.MostPopular
+  document.querySelector('#mpq1').innerHTML = mpquestion.getMPTemplate(`<p class="d-flex justify-content-center">Details Below</p>`)
+  let mpquestion1 = _questionService.SecondMostPopular
+  document.querySelector('#mpq2').innerHTML = mpquestion1.getMPTemplate(`<a class="btn btn-primary btn-sm d-flex justify-content-center" onclick="app.controllers.questionController.getDetails()">Get Details</a>`)
+  let mpquestion2 = _questionService.ThirdMostPopular
+  document.querySelector('#mpq3').innerHTML = mpquestion2.getMPTemplate(`<a class="btn btn-primary btn-sm d-flex justify-content-center" onclick="app.controllers.questionController.getDetails()">Get Details</a>`)
+}
 
 function _drawWrongAnswers() {
   let wrongAnswers = _questionService.WrongAnswers
@@ -30,6 +38,10 @@ function _drawMostPopular() {
   // document.querySelector('#posts').innerHTML = mostPopular.Template
 }
 
+// function addQuestion() {
+
+// }
+
 
 //PUBLIC
 
@@ -38,6 +50,7 @@ export default class QuestionController {
     _questionService.addSubscriber('questions', _drawConspiracies)
     _questionService.addSubscriber('questions', _drawWrongAnswers)
     _questionService.addSubscriber('questions', _drawMadLibs)
+    _questionService.addSubscriber('questions', _drawMPQuestions)
     _questionService.addSubscriber('questions', _drawMostPopular)
 
     _questionService.getAllQuestions()
@@ -55,6 +68,11 @@ export default class QuestionController {
   getMostPopular() {
     _drawMostPopular()
   }
+  // getDetails(id) {
+  //   _questionService.Conspiracies()
+  // }
+
+
 
   addQuestion(event) {
     event.preventDefault();

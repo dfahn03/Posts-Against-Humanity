@@ -1,12 +1,12 @@
 export default class Question {
   constructor(data) {
     this._id = data._id
+    this.title = data.title
     this.category = data.category
-    this.body = data.body
-    this.votes = data.votes
     this.byLine = data.byLine || data.userId.name
     this.imgUrl = data.imgUrl || 'https://trustworks.files.wordpress.com/2017/04/questions.jpeg?w=960&h=615'
-    this.title = data.title
+    this.body = data.body
+    this.votes = data.votes
     this.timestamp = data.timestamp || moment(data.createdAt.split('T')[0], "YYYYMMDD").startOf('day').fromNow()
     // console.log(data.createdAt.split('T')[0])
   }
@@ -45,7 +45,18 @@ export default class Question {
       `
   }
 
-
+  getMPTemplate(button) {
+    return `
+    <div class="card mb-2 cardStyle">
+      <img class="card-img-top" src="${this.imgUrl}"alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">${this.title}</h4>
+        <p class="card-text">${this.category}</p>
+        ${button}
+      </div>
+    </div>
+    `
+  }
 
   get cTemplate() {
     return `
@@ -59,3 +70,36 @@ export default class Question {
     `
   }
 }
+
+//Create Post Template
+
+{/* <div class="col-md-4 pr-0">
+  <div class="card mb-2 cardStyle">
+    <div class="card-body">
+      <h4 class="card-title">Create Post</h4>
+      <form>
+        <div class="form-group row" onsubmit="app.controllers.questionController.addQuestion()">
+          <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Title</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Title">
+                    </div>
+            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Category</label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control form-control-sm" id="colFormLabelSm"
+                placeholder="Category">
+                    </div>
+              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">ImageUrl</label>
+              <div class="col-sm-8">
+                <input type="email" class="form-control form-control-sm" id="colFormLabelSm"
+                  placeholder="ImageUrl">
+                    </div>
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Body</label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Body">
+                    </div>
+                </div>
+                </form>
+              <a class="btn btn-primary d-flex justify-content-center" type="submit">Create</a>
+            </div>
+          </div>
+        </div> */}

@@ -85,12 +85,24 @@ padding-top: 2px;
   width: 100%;
 }
 
-#search-span {
+/* #search-span {
   position: fixed;
   right: 0;
   margin-top: 5px;
   z-index: 1;
+} */
+.cardStyle {
+  height: 50vh;
+  background-color: #000000bf;
+  font-weight: 100;
 }
+.card-img-top {
+  height: 30vh;
+  width: 30vw;
+}
+/* .carousel-indicators {
+  margin-bottom: -15px;
+} */
 
 .card {
   display: inline-block;
