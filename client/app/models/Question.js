@@ -45,6 +45,8 @@ export default class Question {
       `
   }
 
+
+
   get cTemplate() {
     return `
     <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
