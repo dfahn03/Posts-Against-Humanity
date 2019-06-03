@@ -52,6 +52,7 @@ export default class Question {
       <div class="card-body">
         <h4 class="card-title">${this.title}</h4>
         <p class="card-text">${this.category}</p>
+        <p class="card-text">Up Votes: ${this.votes}</p>
         ${button}
       </div>
     </div>
@@ -64,6 +65,7 @@ export default class Question {
       <div class="card-body">
         <h4 class="card-title">${this.title}</h4>
         <h5 class="card-title">${this.category}</h5>
+        
         <button class="btn btn-pill" onclick="app.controllers.questionController.getMoreInfo()"</button>
       </div>
     </div>

@@ -30,10 +30,10 @@ export default class QuestionService {
     let conspiracies = _state.questions.filter(q => q.category == "Conspiracy")
     return conspiracies.map(c => new Question(c)).sort((a, b) => b.votes - a.votes)[0]
   }
-  get Conspiracies() {
-    let conspiracies = _state.questions.filter(q => q.category == "Conspiracy")
-    return conspiracies.map(c => new Question(c)).sort((a, b) => b.votes - a.votes)
-  }
+  // get Conspiracies() {
+  //   let conspiracies = _state.questions.filter(q => q.category == "Conspiracy")
+  //   return conspiracies.map(c => new Question(c)).sort((a, b) => b.votes - a.votes)
+  // }
 
   get WrongAnswers() {
     let wrongAnswers = _state.questions.filter(q => q.category == "Wrong-Answer")

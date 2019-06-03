@@ -12,14 +12,14 @@ function _drawMPConspiracy() {
   // })
   document.querySelector('#posts').innerHTML = conspiracy.Template
 }
-function _drawMPConspiracies() {
-  let conspiracies = _questionService.Conspiracies
-  let template = ''
-  conspiracies.forEach(c => {
-    template += c.getMPTemplate
-  })
-  document.querySelector('.conspiracies').innerHTML = template + `<a class="btn btn-primary btn-sm d-flex justify-content-center" onclick="app.controllers.questionController.getDetails()">Get Details</a>`
-}
+// function _drawMPConspiracies() {
+//   let conspiracies = _questionService.Conspiracies
+//   let template = ''
+//   conspiracies.forEach(c => {
+//     template += c.getMPTemplate
+//   })
+//   document.querySelector('.conspiracies').innerHTML = template + `<a class="btn btn-primary btn-sm d-flex justify-content-center" onclick="app.controllers.questionController.getDetails()">Get Details</a>`
+// }
 function _drawMPQuestions() {
   let mpquestion = _questionService.MostPopular
   document.querySelector('#mpq1').innerHTML = mpquestion.getMPTemplate(`<p class="d-flex justify-content-center">Details Below</p>`)
@@ -56,7 +56,7 @@ function _drawMostPopular() {
 export default class QuestionController {
   constructor() {
     _questionService.addSubscriber('questions', _drawMPConspiracy)
-    _questionService.addSubscriber('questions', _drawMPConspiracies)
+    // _questionService.addSubscriber('questions', _drawMPConspiracies)
     _questionService.addSubscriber('questions', _drawWrongAnswers)
     _questionService.addSubscriber('questions', _drawMadLibs)
     _questionService.addSubscriber('questions', _drawMPQuestions)
