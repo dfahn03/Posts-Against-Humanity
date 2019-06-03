@@ -5,7 +5,7 @@ export default class Question {
     this.body = data.body
     this.votes = data.votes
     this.byLine = data.byLine || data.userId.name
-    this.image = data.imgUrl
+    this.imgUrl = data.imgUrl || 'https://trustworks.files.wordpress.com/2017/04/questions.jpeg?w=960&h=615'
     this.title = data.title
     this.timestamp = data.timestamp || moment(data.createdAt.split('T')[0], "YYYYMMDD").startOf('day').fromNow()
     // console.log(data.createdAt.split('T')[0])
@@ -21,9 +21,9 @@ export default class Question {
       <h3 class="mix-text-difference card-header">${this.title}</h3>
       <h4 class="mix-text-difference card-header">${this.category}</h4>
       <div class="card-body">
-        <h5 class="mix-text-difference card-title">@${this.byLine}</h5>
+        <h6 class="mix-text-difference card-title">@${this.byLine}</h6>
       </div>
-      <img class="post-img" style="width: 50%;" src="/assets/hitler-in-old-age-in-south-america.png" alt="Post image">
+      <img class="post-img" style="width: 50%;" src="${this.imgUrl}" alt="Post image">
       <div class="card-body">
       <p class="mix-text-difference card-text">${this.body} ${this.hashtags()}</p>
       </div>
@@ -51,7 +51,6 @@ export default class Question {
         <button class="btn btn-pill" onclick="app.controllers.questionController.getMoreInfo()"</button>
       </div>
     </div>
-    
     `
   }
 }
