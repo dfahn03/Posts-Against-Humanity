@@ -12,33 +12,36 @@ export default class Question {
   }
 
   hashtags() {
-    return `<a href="#">#${this.category}</a>`
+    return `<a href="#" class="text-muted">#${this.category}</a>`
   }
 
   get Template() {
     return `
-    <div class="individual-post d-flex card mb-3">
-      <h3 class="mix-text-difference card-header">${this.title}</h3>
-      <h4 class="mix-text-difference card-header">${this.category}</h4>
-      <div class="card-body">
-        <h6 class="mix-text-difference card-title">@${this.byLine}</h6>
+    <div class="individual-post d-flex card mb-3 text-white">
+        <h3 class="mix-text-difference card-header">${this.title}</h3>
+        <h4 class="mix-text-difference card-header">${this.category}</h4>
+        <div class="card-body">
+          <h6 class="mix-text-difference card-title">@${this.byLine}</h6>
+        </div>
+        <img class="post-img" style="width: 50%;" src="${this.imgUrl}" alt="Post image">
+        <div class="card-body">
+        <div class="card-body like-body d-flex pt-0">
+          <p class="mix-text-difference card-text">${this.body} ${this.hashtags()}</p>
+        </div>
+        <div class="card-body d-flex justify-content-center align-items-center pt-0">
+          <a href="#" class="card-link"><img class="vote-icon1" src="assets/cowboy-emoji.png"></img></a>
+          <span class="totalVotes">Public opinion: ${this.votes} Likes</span>
+          <a href="#" class="card-link"><img class="vote-icon2" src="assets/thumbs-down-emoji.png"></img></a>
+        </div>
+        <div class="card-body d-flex justify-content-center align-items-center">
+          <ul id="${this._id}comments" class="comment-section list-group list-group-flush">
+          <span>Be the first to leave a comment!</span>
+          </ul>
+        </div>
+        <div class="mix-text-difference card-footer text-muted">
+          <small>${this.timestamp}</small>
+        </div>
       </div>
-      <img class="post-img" style="width: 50%;" src="${this.imgUrl}" alt="Post image">
-      <div class="card-body">
-      <p class="mix-text-difference card-text">${this.body} ${this.hashtags()}</p>
-      </div>
-      <ul id="${this._id}comments" class="comment-section list-group list-group-flush">
-      <span>Be the first to leave a comment!</span>
-      </ul>
-      <div class="card-body like-body d-flex">
-      <a href="#" class="card-link"><img class="vote-icon" id="vote1" src="assets/cowboy-emoji.png"></img></a>
-      <span>Public opinion: ${this.votes} Likes</span>
-      <a href="#" class="card-link"><img class="vote-icon" id="vote2" src="assets/thumbs-down-emoji.png"></img></a>
-      </div>
-      <div class="mix-text-difference card-footer text-muted">
-      <small>${this.timestamp}</small>
-      </div>
-    </div>
       `
   }
 

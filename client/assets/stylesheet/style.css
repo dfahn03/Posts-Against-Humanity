@@ -106,15 +106,20 @@ margin-top: 20vh;
 }
 
 
-#vote1 {
-height: 40px; 
+.vote-icon1 {
+  height: 40px; 
+  margin-bottom: 10px;
 }
-#vote2 {
-height: 50px; 
+.totalVotes{
+  padding-left: 15px;
+  padding-right: 10px;
+}
+.vote-icon2 {
+  height: 50px; 
 }
 
 .like-body {
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .post-img {
