@@ -4,13 +4,21 @@ import QuestionService from "../services/QuestionService.js";
 
 let _questionService = new QuestionService()
 
-function _drawConspiracies() {
-  let conspiracies = _questionService.Conspiracies
+function _drawMPConspiracy() {
+  let conspiracy = _questionService.MPConspiracy
   // let template = ''
   // conspiracies.forEach(c => {
   //   template += c.Template
   // })
-  document.querySelector('#posts').innerHTML = conspiracies.Template
+  document.querySelector('#posts').innerHTML = conspiracy.Template
+}
+function _drawMPConspiracies() {
+  let conspiracies = _questionService.Conspiracies
+  let template = ''
+  conspiracies.forEach(c => {
+    template += c.getMPTemplate
+  })
+  document.querySelector('.conspiracies').innerHTML = template + `<a class="btn btn-primary btn-sm d-flex justify-content-center" onclick="app.controllers.questionController.getDetails()">Get Details</a>`
 }
 function _drawMPQuestions() {
   let mpquestion = _questionService.MostPopular
@@ -47,7 +55,8 @@ function _drawMostPopular() {
 
 export default class QuestionController {
   constructor() {
-    _questionService.addSubscriber('questions', _drawConspiracies)
+    _questionService.addSubscriber('questions', _drawMPConspiracy)
+    _questionService.addSubscriber('questions', _drawMPConspiracies)
     _questionService.addSubscriber('questions', _drawWrongAnswers)
     _questionService.addSubscriber('questions', _drawMadLibs)
     _questionService.addSubscriber('questions', _drawMPQuestions)
@@ -57,7 +66,8 @@ export default class QuestionController {
   }
 
   getConspiracies() {
-    _drawConspiracies()
+    _drawMPConspiracy()
+    _drawMPConspiracies()
   }
   getWrongAnswers() {
     _drawWrongAnswers()
@@ -89,6 +99,7 @@ export default class QuestionController {
 
   delete(id) {//delete by user id, lets figure this out
     _questionService.delete(id)
+
   }
 
 }

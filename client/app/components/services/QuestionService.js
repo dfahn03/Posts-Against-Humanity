@@ -26,9 +26,13 @@ export default class QuestionService {
     _subscribers[propName].push(fn)
   }
 
-  get Conspiracies() {
+  get MPConspiracy() {
     let conspiracies = _state.questions.filter(q => q.category == "Conspiracy")
     return conspiracies.map(c => new Question(c)).sort((a, b) => b.votes - a.votes)[0]
+  }
+  get Conspiracies() {
+    let conspiracies = _state.questions.filter(q => q.category == "Conspiracy")
+    return conspiracies.map(c => new Question(c)).sort((a, b) => b.votes - a.votes)
   }
 
   get WrongAnswers() {
